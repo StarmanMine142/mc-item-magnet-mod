@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "itemmagnetmod",
-	"version": "${2.10}",
+	"version": "${version}",
 	"name": "Item Magnet Mod",
 	"description": "This mod adds an item magnet to the game. It can be activated / deactivated and looses durability for each item picked up.",
 	"authors": [
@@ -11,7 +11,8 @@
 		"StarmanMine142"
 	],
 	"contact": {
-		"sources": "https://github.com/davdeo/mc-item-magnet-mod.git"
+		"sources": "https://github.com/davdeo/mc-item-magnet-mod",
+		"issues": "https://github.com/davdeo/mc-item-magnet-mod/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/itemmagnetmod/mod_icon.png",
@@ -25,19 +26,29 @@
 		],
 		"fabric-datagen": [
 			"net.davdeo.itemmagnetmod.ItemMagnetModDataGenerator"
+		],
+		"modmenu": [
+			"net.davdeo.itemmagnetmod.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
 		"itemmagnetmod.mixins.json"
 	],
 	"depends": {
+<<<<<<< HEAD
+		"fabricloader": "${loader_version}",
+		"minecraft": "${minecraft_version}",
+		"java": ">=${java_version}",
+=======
 		"fabricloader": ">=0.18.0",
 		"minecraft": "~1.21.11",
 		"java": ">=21",
+>>>>>>> 4ed1c4aaed3eb10a9b3b28cc0b534c3943d8e660
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"cloth-config": "*",
+		"modmenu": "*"
 	},
 	"accessWidener": "itemmagnetmod.accesswidener"
 }
