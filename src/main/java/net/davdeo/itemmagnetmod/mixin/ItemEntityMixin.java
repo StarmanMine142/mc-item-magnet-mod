@@ -58,15 +58,9 @@ public abstract class ItemEntityMixin extends Entity implements TraceableEntity 
 		}
 
 		if (
-<<<<<<< HEAD
 				this.target == null
 						|| this.target.distanceToSqr(thisObj) > this.getSquaredPickupDistance()
 						|| this.target != nextTarget
-=======
-			this.target == null
-			|| this.target.distanceToSqr(thisObj) > SQUARED_PICKUP_DISTANCE
-			|| this.target != nextTarget
->>>>>>> 4ed1c4aaed3eb10a9b3b28cc0b534c3943d8e660
 		) {
 			this.target = nextTarget;
 		}
@@ -113,45 +107,26 @@ public abstract class ItemEntityMixin extends Entity implements TraceableEntity 
 			Vec3 targetEyeVector = new Vec3(this.target.getX() - thisObj.getX(), this.target.getY() + this.target.getEyeHeight() / 2.0 - thisObj.getY(), this.target.getZ() - thisObj.getZ());
 			double squaredTargetEyeDistance = targetEyeVector.lengthSqr();
 
-<<<<<<< HEAD
 			if (squaredTargetEyeDistance < currentSquaredPickupDistance) {
 				double relativeTargetEyeDistance = 1.0 - Math.sqrt(squaredTargetEyeDistance) / currentPickupDistance;
 				thisObj.setDeltaMovement(thisObj.getDeltaMovement().add(targetEyeVector.normalize().scale(relativeTargetEyeDistance * relativeTargetEyeDistance * 0.1)));
-=======
-			if (squaredTargetEyeDistance < SQUARED_PICKUP_DISTANCE) {
-				double relativeTargetEyeDistance = 1.0 - Math.sqrt(squaredTargetEyeDistance) / PICKUP_DISTANCE;
-				thisObj.setDeltaMovement(thisObj.getDeltaMovement().add(targetEyeVector.normalize().scale(relativeTargetEyeDistance * relativeTargetEyeDistance * 0.1)));
->>>>>>> 4ed1c4aaed3eb10a9b3b28cc0b534c3943d8e660
 			}
 		}
 
 		if (
-<<<<<<< HEAD
 				this.target != null &&
 						this.onGround() &&
 						this.getDeltaMovement().horizontalDistanceSqr() > 1.0E-5f &&
 						(this.tickCount + this.getId()) % 4 == 0
-=======
-			this.target != null &&
-			this.onGround() &&
-			this.getDeltaMovement().horizontalDistanceSqr() > 1.0E-5f &&
-			(this.tickCount + this.getId()) % 4 == 0
->>>>>>> 4ed1c4aaed3eb10a9b3b28cc0b534c3943d8e660
 		) {
 			thisObj.move(MoverType.SELF, thisObj.getDeltaMovement());
 		}
 	}
 
-<<<<<<< HEAD
 
 	@Unique
 	private int stackCountBeforePickup = 0;
 
-=======
-	@Unique
-	private int stackCountBeforePickup = 0;
-
->>>>>>> 4ed1c4aaed3eb10a9b3b28cc0b534c3943d8e660
 	/**
 	 * Captures the stack count BEFORE the insertStack call.
 	 * Injects at the beginning of onPlayerCollision.
